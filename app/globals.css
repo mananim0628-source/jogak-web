@@ -1,26 +1,45 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --color-gold: #C9A961;
+  --color-pink: #FF2D87;
+  --color-bg: #0d0820;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+/* Prose styling for remark-generated article HTML */
+.prose h2 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #fff;
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
 }
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+.prose h3 {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #fff;
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
 }
-
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+.prose p {
+  color: #d1d5db;
+  line-height: 1.8;
+  margin-bottom: 1rem;
 }
+.prose ul, .prose ol {
+  color: #d1d5db;
+  margin-bottom: 1rem;
+  padding-left: 1.25rem;
+}
+.prose li { margin-bottom: 0.25rem; }
+.prose ul li { list-style: disc; }
+.prose ol li { list-style: decimal; }
+.prose strong { color: #fff; font-weight: 600; }
+.prose a { color: var(--color-gold); text-decoration: underline; text-underline-offset: 2px; }
+.prose a:hover { color: #fff; }
+.prose hr { border-color: rgba(255,255,255,0.1); margin: 2rem 0; }
+.prose table { width: 100%; font-size: 0.875rem; border-collapse: collapse; margin-bottom: 1.5rem; }
+.prose th { text-align: left; font-size: 0.75rem; color: var(--color-gold); font-weight: 600; padding-bottom: 0.5rem; border-bottom: 1px solid rgba(255,255,255,0.2); padding-right: 1rem; }
+.prose td { padding: 0.5rem 1rem 0.5rem 0; border-bottom: 1px solid rgba(255,255,255,0.08); color: #d1d5db; vertical-align: top; }
+.prose code, .prose pre { background: rgba(255,255,255,0.08); border-radius: 0.375rem; padding: 0.125rem 0.5rem; font-size: 0.875rem; color: #e5e7eb; }
+.prose blockquote { border-left: 3px solid rgba(201,169,97,0.5); padding-left: 1rem; color: #9ca3af; font-style: italic; }
