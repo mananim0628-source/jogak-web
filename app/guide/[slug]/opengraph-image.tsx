@@ -1,6 +1,7 @@
 import { ImageResponse } from "next/og";
 import { getArticleBySlug } from "@/lib/content";
 
+export const runtime = "nodejs";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 export const alt = "조각닷컴 가이드";
@@ -23,10 +24,15 @@ export default async function OgImage({
     // notFound 슬러그는 기본값 유지
   }
 
-  // Noto Sans KR Bold — 한글 렌더링용
-  const fontData = await fetch(
-    "https://cdn.jsdelivr.net/gh/google/fonts@main/ofl/notosanskr/NotoSansKR-Bold.ttf"
-  ).then((r) => r.arrayBuffer());
+  // Noto Sans KR Bold — 한글 렌더링용 (fetch 실패 시 시스템 폰트로 폴백)
+  let fontData: ArrayBuffer | null = null;
+  try {
+    fontData = await fetch(
+      "https://cdn.jsdelivr.net/gh/google/fonts@main/ofl/notosanskr/NotoSansKR-Bold.ttf"
+    ).then((r) => r.arrayBuffer());
+  } catch {
+    // 폰트 없이 렌더 (시스템 sans-serif)
+  }
 
   return new ImageResponse(
     (
@@ -106,13 +112,9 @@ export default async function OgImage({
     ),
     {
       ...size,
-      fonts: [
-        {
-          name: "NotoSansKR",
-          data: fontData,
-          weight: 700,
-        },
-      ],
+      ...(fontData
+        ? { fonts: [{ name: "NotoSansKR", data: fontData, weight: 700 }] }
+        : {}),
     }
   );
 }
