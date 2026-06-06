@@ -25,7 +25,10 @@ export const metadata: Metadata = {
   robots: { index: true, follow: true },
   verification: {
     google: "gg0_rgLBJyrGG2uVcrzFpHlHMtjq4NyvGs0wac5V5Uw",
-    other: { "naver-site-verification": "9e0692b62daed8f77c5de227e1dc95811ca77ae8" },
+    other: {
+      "naver-site-verification": "9e0692b62daed8f77c5de227e1dc95811ca77ae8",
+      "msvalidate.01": "D32BBFADE52D194D16A251DE2557C61D",
+    },
   },
 };
 
