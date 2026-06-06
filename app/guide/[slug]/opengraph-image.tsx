@@ -16,15 +16,6 @@ export default async function OgImage({
   const title = meta?.title ?? "조각닷컴 강남 나이트라이프 가이드";
   const episode = meta?.episode ?? "GUIDE";
 
-  let fontData: ArrayBuffer | null = null;
-  try {
-    fontData = await fetch(
-      "https://cdn.jsdelivr.net/gh/google/fonts@main/ofl/notosanskr/NotoSansKR-Bold.ttf"
-    ).then((r) => r.arrayBuffer());
-  } catch {
-    // 폰트 없이 렌더
-  }
-
   return new ImageResponse(
     (
       <div
@@ -48,7 +39,6 @@ export default async function OgImage({
               padding: "10px 28px",
               borderRadius: 100,
               letterSpacing: 3,
-              fontFamily: "NotoSansKR",
             }}
           >
             {episode}
@@ -62,7 +52,6 @@ export default async function OgImage({
             fontWeight: 700,
             lineHeight: 1.32,
             maxWidth: 940,
-            fontFamily: "NotoSansKR",
           }}
         >
           {title}
@@ -81,28 +70,14 @@ export default async function OgImage({
               fontSize: 30,
               fontWeight: 700,
               letterSpacing: 5,
-              fontFamily: "NotoSansKR",
             }}
           >
             조각닷컴
           </div>
-          <div
-            style={{
-              color: "#FF2D87",
-              fontSize: 24,
-              fontFamily: "NotoSansKR",
-            }}
-          >
-            @unni_memo
-          </div>
+          <div style={{ color: "#FF2D87", fontSize: 24 }}>@unni_memo</div>
         </div>
       </div>
     ),
-    {
-      ...size,
-      ...(fontData
-        ? { fonts: [{ name: "NotoSansKR", data: fontData, weight: 700 }] }
-        : {}),
-    }
+    size
   );
 }
