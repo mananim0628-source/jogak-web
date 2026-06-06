@@ -11,6 +11,27 @@ export interface FaqItem {
   a: string;
 }
 
+export interface CardItem {
+  no: number;
+  role: string;
+  headline: string;
+  sub?: string;
+  example?: string;
+  takeaway?: string;
+  action?: string;
+}
+
+export interface ReelScene {
+  no: number;
+  narration: string;
+  caption: string;
+}
+
+export interface ReelMeta {
+  video_url?: string;
+  scenes: ReelScene[];
+}
+
 export interface ArticleFrontmatter {
   slug: string;
   track: "mix" | "ssul" | "info";
@@ -24,6 +45,8 @@ export interface ArticleFrontmatter {
   instagram_posted: boolean;
   faq: FaqItem[];
   tags: string[];
+  cards?: CardItem[];
+  reel?: ReelMeta;
 }
 
 export interface Article extends ArticleFrontmatter {

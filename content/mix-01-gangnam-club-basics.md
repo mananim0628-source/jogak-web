@@ -10,6 +10,66 @@ author: "@jogak_note"
 author_note: "강남 나이트라이프 정보 채널. 실제 방문 경험을 바탕으로 비용·매너 정보를 정리합니다."
 instagram_posted: true
 tags: ["강남클럽", "클럽비용", "강남나이트", "드레스코드", "테이블차지"]
+cards:
+  - no: 1
+    role: "훅"
+    headline: "강남 클럽\n처음 가면\n얼마가 드나요?"
+    sub: "비용 구조 모르면 카드 명세서에서 당황합니다"
+    action: "@unni_memo에서 일행 찾기"
+  - no: 2
+    role: "비용 구조"
+    headline: "보틀+테이블 차지\n= 최소 수십만 원"
+    example: "보틀 30~60만 원/병 (핫플 기준)\n테이블 차지 50~100만 원 별도"
+    takeaway: "혼자 전액 부담은\n구조적으로 무리"
+  - no: 3
+    role: "드레스코드"
+    headline: "입구에서\n거절당하지 마세요"
+    example: "슬리퍼·반바지·트레이닝복 → 거절\n셔츠·니트+슈즈 → 통과"
+    takeaway: "방문 전 SNS·담당자 확인 필수"
+  - no: 4
+    role: "도어 절차"
+    headline: "예약자 이름과\n인원을 미리 준비"
+    example: "신분증 필수 (주민등록증·여권·운전면허)\n예약자 이름+인원 숙지"
+    takeaway: "일행 전체 함께 입장이 훨씬 수월"
+  - no: 5
+    role: "테이블 매너"
+    headline: "보틀 주문 전\n일행과 합의 먼저"
+    example: "공동 비용 = 주문 전 전원 동의\n옆 테이블 과도한 접근 금지"
+    takeaway: "공평하게 N분의 1이 기준"
+  - no: 6
+    role: "귀가"
+    headline: "귀가까지가\n경험입니다"
+    example: "음료 시야 밖에 두지 마세요\n귀가 동선·택시 미리 확인"
+    takeaway: "일행 전체 함께 나오는 것이 기본"
+  - no: 7
+    role: "조각"
+    headline: "비용 나누면\n충분히 갈 수 있다"
+    sub: "4인 120만 원 테이블 → 1인 30만 원"
+    action: "@unni_memo 일행 모집 확인"
+reel:
+  video_url: ""
+  scenes:
+    - no: 1
+      narration: "강남 클럽 처음 가면 얼마가 드나요?"
+      caption: "강남 클럽 비용 구조"
+    - no: 2
+      narration: "보틀에 테이블 차지까지, 최소 수십만 원입니다"
+      caption: "보틀 30~60만 원/병"
+    - no: 3
+      narration: "드레스코드 미리 확인 안 하면 입구에서 컷"
+      caption: "슬리퍼·반바지는 거절"
+    - no: 4
+      narration: "예약자 이름과 인원, 도어에서 바로 말할 수 있어야 합니다"
+      caption: "신분증 필수 지참"
+    - no: 5
+      narration: "보틀 주문 전 일행 전체 합의가 먼저입니다"
+      caption: "N분의 1이 기본"
+    - no: 6
+      narration: "같이 갈 일행을 찾고 있다면 @unni_memo"
+      caption: "텔레그램 @unni_memo"
+    - no: 7
+      narration: "조각이 모여야 파티가 열린다"
+      caption: "@unni_memo 일행 모집 중"
 faq:
   - q: "강남 클럽 테이블 비용이 얼마인가요?"
     a: "테이블 비용은 보틀(술) 정가를 기준으로 합니다. 핫플레이스 기준 보틀 1병에 30~60만 원대이며, 인기 클럽은 테이블 최소 금액이 100만 원을 넘기도 합니다. 혼자 부담하지 않고 일행끼리 N분의 1로 나누는 것이 일반적입니다."

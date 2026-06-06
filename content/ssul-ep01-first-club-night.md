@@ -10,6 +10,66 @@ author: "@jogak_note"
 author_note: "강남 나이트라이프 정보 채널. 실제 방문 경험을 바탕으로 비용·매너 정보를 정리합니다."
 instagram_posted: true
 tags: ["강남클럽", "클럽비용", "테이블차지", "보틀가격", "강남나이트"]
+cards:
+  - no: 1
+    role: "훅"
+    headline: "강남 클럽\n통장 텅장 된 썰"
+    sub: "카드 문자 보고 손이 덜덜 떨렸다"
+    action: "실화 비용 구조 확인"
+  - no: 2
+    role: "비용 구조"
+    headline: "보틀+차지\n자리 잡는 순간 발생"
+    example: "보틀 30~60만 원/병 (핫플 기준)\n테이블 차지 100만 원 이상도"
+    takeaway: "혼자 감당은 처음부터 구조적으로 무리"
+  - no: 3
+    role: "1인 계산"
+    headline: "4명이면\n1인 25만 원"
+    example: "100만 원 ÷ 4인 = 25만 원\n120만 원 ÷ 4인 = 30만 원"
+    takeaway: "인원 먼저, 예산 합의 먼저"
+  - no: 4
+    role: "실수 ①"
+    headline: "인원 확정 없이\n테이블 먼저 잡으면"
+    example: "나중에 인원 빠지면\n남은 사람이 더 낸다"
+    takeaway: "확정 인원으로만 예약"
+  - no: 5
+    role: "실수 ②③"
+    headline: "1인 얼마인지\n계산 안 하고 간다"
+    example: "총액만 알면 계산 때 멘붕\n드레스코드 확인도 놓친다"
+    takeaway: "방문 전 15분 준비로 다 피할 수 있다"
+  - no: 6
+    role: "지킬 것"
+    headline: "첫 방문\n3가지만 지켜라"
+    example: "① 드레스코드 확인\n② 보틀 주문 전 합의\n③ 내 테이블 선에서 촬영"
+    takeaway: "이것만 지켜도 매너 있는 방문자"
+  - no: 7
+    role: "조각"
+    headline: "비용 나누면\n강남 클럽도 현실"
+    sub: "같이 갈 일행을 찾는다면"
+    action: "@unni_memo 모집 확인"
+reel:
+  video_url: ""
+  scenes:
+    - no: 1
+      narration: "강남 클럽 테이블 잡으면 실제로 얼마 나올까요?"
+      caption: "통장 텅장 된 실화"
+    - no: 2
+      narration: "보틀에 테이블 차지, 자리 잡는 순간 발생합니다"
+      caption: "보틀+차지 구조"
+    - no: 3
+      narration: "4명이면 1인 25만 원, 나누면 됩니다"
+      caption: "100만 ÷ 4인 = 25만"
+    - no: 4
+      narration: "인원 확정 없이 테이블 잡으면 남은 사람이 더 냅니다"
+      caption: "실수 ① 인원 먼저"
+    - no: 5
+      narration: "1인 얼마인지 계산하고, 드레스코드도 미리 확인하세요"
+      caption: "실수 ②③ 방문 전 15분"
+    - no: 6
+      narration: "같이 갈 일행을 찾고 있다면 @unni_memo"
+      caption: "텔레그램 @unni_memo"
+    - no: 7
+      narration: "조각이 모여야 파티가 열린다"
+      caption: "@unni_memo 일행 모집 중"
 faq:
   - q: "강남 클럽 테이블을 잡으면 실제로 얼마가 나오나요?"
     a: "핫플레이스 기준 보틀 1병에 30~60만 원, 테이블 최소 금액이 100만 원을 넘는 곳도 있습니다. 4명이 100만 원짜리 테이블을 이용하면 1인 부담금은 25만 원입니다. 인원을 먼저 확정하고 예산을 나눠 계산하는 것이 핵심입니다."
