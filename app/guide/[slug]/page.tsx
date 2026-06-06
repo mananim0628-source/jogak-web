@@ -27,9 +27,17 @@ export async function generateMetadata({
         title: article.title,
         description: article.description,
         type: "article",
-        publishedTime: article.published_at,
+        publishedTime: `${article.published_at}T00:00:00+09:00`,
         url: `${SITE_URL}/guide/${slug}`,
         locale: "ko_KR",
+        images: [
+          {
+            url: `${SITE_URL}/guide/${slug}/opengraph-image`,
+            width: 1200,
+            height: 630,
+            alt: article.title,
+          },
+        ],
       },
       alternates: { canonical: `${SITE_URL}/guide/${slug}` },
     };

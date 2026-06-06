@@ -20,17 +20,19 @@ export function articleJsonLd(article: Article) {
     "@type": "Article",
     headline: article.title,
     description: article.description,
+    image: `${SITE_URL}/guide/${article.slug}/opengraph-image`,
     author: {
       "@type": "Person",
       name: article.author,
       description: article.author_note,
+      url: "https://www.instagram.com/jogak_note",
     },
     publisher: {
       "@type": "Organization",
       name: "조각닷컴",
       url: SITE_URL,
     },
-    datePublished: article.published_at,
+    datePublished: `${article.published_at}T00:00:00+09:00`,
     url: `${SITE_URL}/guide/${article.slug}`,
     inLanguage: "ko",
   };
