@@ -1,7 +1,6 @@
 import { ImageResponse } from "next/og";
-import { getArticleBySlug } from "@/lib/content";
+import { OG_ARTICLES } from "@/lib/og-data";
 
-export const runtime = "nodejs";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 export const alt = "조각닷컴 가이드";
@@ -13,25 +12,17 @@ export default async function OgImage({
 }) {
   const { slug } = await params;
 
-  let title = "조각닷컴 강남 나이트라이프 가이드";
-  let episode = "GUIDE";
+  const meta = OG_ARTICLES[slug];
+  const title = meta?.title ?? "조각닷컴 강남 나이트라이프 가이드";
+  const episode = meta?.episode ?? "GUIDE";
 
-  try {
-    const article = await getArticleBySlug(slug);
-    title = article.h1 || article.title;
-    episode = `${article.track.toUpperCase()} · ${article.episode}`;
-  } catch {
-    // notFound 슬러그는 기본값 유지
-  }
-
-  // Noto Sans KR Bold — 한글 렌더링용 (fetch 실패 시 시스템 폰트로 폴백)
   let fontData: ArrayBuffer | null = null;
   try {
     fontData = await fetch(
       "https://cdn.jsdelivr.net/gh/google/fonts@main/ofl/notosanskr/NotoSansKR-Bold.ttf"
     ).then((r) => r.arrayBuffer());
   } catch {
-    // 폰트 없이 렌더 (시스템 sans-serif)
+    // 폰트 없이 렌더
   }
 
   return new ImageResponse(
@@ -47,7 +38,6 @@ export default async function OgImage({
           padding: "72px 80px",
         }}
       >
-        {/* 상단: 트랙 배지 */}
         <div style={{ display: "flex" }}>
           <div
             style={{
@@ -65,7 +55,6 @@ export default async function OgImage({
           </div>
         </div>
 
-        {/* 중앙: 아티클 제목 */}
         <div
           style={{
             color: "#ffffff",
@@ -79,7 +68,6 @@ export default async function OgImage({
           {title}
         </div>
 
-        {/* 하단: 사이트명 + 핸들 */}
         <div
           style={{
             display: "flex",
