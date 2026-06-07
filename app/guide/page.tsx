@@ -13,7 +13,7 @@ export default async function GuidePage() {
     <>
       {/* Page header */}
       <div className="pb-10">
-        <p className="overline mb-4">All Guides</p>
+        <p className="brand-label mb-4">All Guides</p>
         <h1
           className="font-black mb-2"
           style={{

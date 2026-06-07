@@ -62,13 +62,14 @@ body::before {
 .text-gold { color: var(--gold); }
 .border-gold { border-color: var(--gold-line); }
 
-/* ───────── Overline label ───────── */
-.overline {
+/* ───────── Brand label (renamed from .overline to avoid Tailwind text-decoration:overline conflict) ───────── */
+.brand-label {
   font-size: 0.65rem;
   font-weight: 700;
   letter-spacing: 0.25em;
   text-transform: uppercase;
   color: var(--gold);
+  text-decoration: none;
 }
 
 /* ───────── Breadcrumb ───────── */

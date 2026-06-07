@@ -50,7 +50,7 @@ export default async function HomePage() {
         />
 
         {/* Overline */}
-        <p className="overline mb-6">Gangnam Nightlife Guide</p>
+        <p className="brand-label mb-6">Gangnam Nightlife Guide</p>
 
         {/* Headline */}
         <h1
@@ -203,7 +203,7 @@ export default async function HomePage() {
           boxShadow: "inset 0 0 0 1px var(--border-gold)",
         }}
       >
-        <p className="overline mb-3">조각 = 함께 가는 경험</p>
+        <p className="brand-label mb-3">조각 = 함께 가는 경험</p>
         <h2
           className="font-black mb-3"
           style={{ fontSize: "1.5rem", color: "var(--text-primary)", letterSpacing: "-0.02em" }}
