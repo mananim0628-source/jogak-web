@@ -1,7 +1,7 @@
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { getArticleBySlug, getArticleSlugs, trackLabel } from "@/lib/content";
-import { faqJsonLd, articleJsonLd, breadcrumbJsonLd } from "@/lib/jsonld";
+import { faqJsonLd, articleJsonLd, breadcrumbJsonLd, serviceJsonLd } from "@/lib/jsonld";
 import FaqSection from "@/components/FaqSection";
 import TelegramCta from "@/components/TelegramCta";
 import AuthorCard from "@/components/AuthorCard";
@@ -68,6 +68,10 @@ export default async function ArticlePage({
   return (
     <>
       {/* JSON-LD */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd()) }}
+      />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd(article)) }}
