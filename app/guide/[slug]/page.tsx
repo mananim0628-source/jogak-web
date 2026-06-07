@@ -89,13 +89,7 @@ export default async function ArticlePage({
           <span key={i} className="flex items-center gap-2">
             {i > 0 && <span style={{ opacity: 0.4 }}>/</span>}
             {crumb.href ? (
-              <a
-                href={crumb.href}
-                className="transition"
-                style={{ color: "var(--text-secondary)" }}
-                onMouseOver={(e) => (e.currentTarget.style.color = "var(--gold)")}
-                onMouseOut={(e) => (e.currentTarget.style.color = "var(--text-secondary)")}
-              >
+              <a href={crumb.href} className="breadcrumb-link">
                 {crumb.name}
               </a>
             ) : (

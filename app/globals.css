@@ -57,6 +57,13 @@ body::before {
 .text-gold { color: var(--gold); }
 .border-gold { border-color: var(--gold-line); }
 
+/* ───────── Breadcrumb ───────── */
+.breadcrumb-link {
+  color: var(--text-secondary);
+  transition: color 0.15s;
+}
+.breadcrumb-link:hover { color: var(--gold); }
+
 /* ───────── Overline label ───────── */
 .overline {
   font-size: 0.65rem;
