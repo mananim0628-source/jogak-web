@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Noto_Sans_KR, Playfair_Display } from "next/font/google";
 import Image from "next/image";
+import InstallPrompt from "@/components/InstallPrompt";
 import "./globals.css";
 
 const notoSansKR = Noto_Sans_KR({
@@ -21,6 +22,11 @@ const SITE_DESC = "강남 나이트라이프 입문 가이드 — 비용·매너
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
+  appleWebApp: {
+    capable: true,
+    statusBarStyle: "black-translucent",
+    title: "조각닷컴",
+  },
   title: { default: `${SITE_NAME} — 강남 나이트라이프 가이드`, template: `%s | ${SITE_NAME}` },
   description: SITE_DESC,
   openGraph: {
@@ -96,6 +102,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         >
           {children}
         </main>
+
+        {/* PWA Install Prompt */}
+        <InstallPrompt />
 
         {/* Footer */}
         <footer
