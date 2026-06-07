@@ -194,13 +194,13 @@ export default async function HomePage() {
         </div>
       </section>
 
-      {/* ── Brand CTA Section — no leading divider, flows from list ── */}
+      {/* ── Brand CTA Section ── */}
       <section
-        className="rounded-2xl p-8 text-center"
+        className="rounded-2xl p-10 text-center"
         style={{
           background:
-            "linear-gradient(135deg, rgba(201,169,97,0.09) 0%, rgba(255,45,135,0.06) 100%)",
-          border: "1px solid var(--border-gold)",
+            "linear-gradient(135deg, rgba(201,169,97,0.10) 0%, rgba(255,45,135,0.06) 100%)",
+          boxShadow: "inset 0 0 0 1px var(--border-gold)",
         }}
       >
         <p className="overline mb-3">조각 = 함께 가는 경험</p>

@@ -113,14 +113,6 @@ body::before {
   background: var(--gold-dim);
 }
 
-/* ───────── Guide list OG thumbnail — mobile: hidden, desktop: visible ───────── */
-.guide-thumb {
-  display: none;
-}
-@media (min-width: 640px) {
-  .guide-thumb { display: block; }
-}
-
 /* ───────── Prose — Article body ───────── */
 .prose {
   font-size: 0.9375rem;

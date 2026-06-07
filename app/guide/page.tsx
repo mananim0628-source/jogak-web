@@ -1,8 +1,6 @@
 import { getAllArticles, trackLabel } from "@/lib/content";
 import type { Metadata } from "next";
 
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://jogak-web.vercel.app";
-
 export const metadata: Metadata = {
   title: "가이드 — 강남 나이트라이프 비용·매너 정보",
   description: "강남 클럽·라운지·루프탑 바의 비용 구조, 드레스코드, 매너를 실비용 기준으로 정리한 가이드 모음입니다.",
@@ -78,27 +76,22 @@ export default async function GuidePage() {
               </p>
             </div>
 
-            {/* OG Thumbnail — desktop only */}
-            <div
-              className="guide-thumb shrink-0 rounded-lg overflow-hidden"
+            {/* OG Thumbnail — hidden on mobile, shown sm+ */}
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src={`/guide/${a.slug}/opengraph-image`}
+              alt=""
+              aria-hidden="true"
+              width={112}
+              height={59}
+              loading="lazy"
+              className="hidden sm:block shrink-0 rounded-lg object-cover"
               style={{
                 width: "112px",
                 height: "59px",
-                background: "rgba(201,169,97,0.08)",
-                border: "1px solid var(--border)",
+                border: "1px solid rgba(255,255,255,0.08)",
               }}
-            >
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src={`${SITE_URL}/guide/${a.slug}/opengraph-image`}
-                alt=""
-                aria-hidden="true"
-                width={112}
-                height={59}
-                loading="lazy"
-                style={{ width: "100%", height: "100%", objectFit: "cover" }}
-              />
-            </div>
+            />
           </a>
         ))}
       </div>
