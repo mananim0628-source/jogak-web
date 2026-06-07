@@ -1,6 +1,8 @@
 import { getAllArticles, trackLabel } from "@/lib/content";
 import type { Metadata } from "next";
 
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://jogak-web.vercel.app";
+
 export const metadata: Metadata = {
   title: "조각닷컴 — 강남 나이트라이프 가이드 허브",
   description:
@@ -9,7 +11,16 @@ export const metadata: Metadata = {
     title: "조각닷컴 — 강남 나이트라이프 가이드",
     description: "비용·매너·드레스코드 — 첫 방문 전 알아야 할 모든 것",
     type: "website",
+    images: [
+      {
+        url: `${SITE_URL}/logo.png`,
+        width: 1080,
+        height: 1080,
+        alt: "조각닷컴",
+      },
+    ],
   },
+  twitter: { card: "summary_large_image" },
 };
 
 export default async function HomePage() {
@@ -18,7 +29,26 @@ export default async function HomePage() {
   return (
     <>
       {/* ── Hero ── */}
-      <section className="pt-6 pb-16">
+      <section className="pt-6 pb-16" style={{ position: "relative" }}>
+        {/* Desktop mood orb — hidden on mobile */}
+        <div
+          aria-hidden="true"
+          style={{
+            position: "absolute",
+            top: "-2rem",
+            right: "-3rem",
+            width: "22rem",
+            height: "22rem",
+            borderRadius: "50%",
+            background:
+              "radial-gradient(circle, rgba(201,169,97,0.13) 0%, rgba(255,45,135,0.07) 45%, transparent 70%)",
+            filter: "blur(40px)",
+            pointerEvents: "none",
+            display: "none",
+          }}
+          className="md-orb"
+        />
+
         {/* Overline */}
         <p className="overline mb-6">Gangnam Nightlife Guide</p>
 
@@ -29,6 +59,7 @@ export default async function HomePage() {
             fontSize: "clamp(2rem, 6vw, 3.25rem)",
             letterSpacing: "-0.025em",
             color: "var(--text-primary)",
+            maxWidth: "600px",
           }}
         >
           처음 가도{" "}
@@ -47,14 +78,14 @@ export default async function HomePage() {
 
         {/* Sub */}
         <p
-          className="text-base leading-relaxed mb-8 max-w-sm"
-          style={{ color: "var(--text-secondary)" }}
+          className="text-base leading-relaxed mb-8"
+          style={{ color: "var(--text-secondary)", maxWidth: "420px" }}
         >
           강남 클럽·라운지·루프탑 바의 실비용·매너·드레스코드를
           첫 방문자 기준으로 정리합니다.
         </p>
 
-        {/* CTA */}
+        {/* CTA buttons */}
         <div className="flex items-center gap-4 flex-wrap">
           <a
             href="/guide"
@@ -79,11 +110,11 @@ export default async function HomePage() {
         </div>
       </section>
 
-      {/* Divider */}
+      {/* Divider: hero → guide list */}
       <div className="divider-gold mb-12" />
 
       {/* ── Guide Index ── */}
-      <section className="mb-16">
+      <section className="mb-20">
         <div className="flex items-baseline justify-between mb-8">
           <h2
             className="font-black text-lg"
@@ -100,13 +131,20 @@ export default async function HomePage() {
           </a>
         </div>
 
-        <div className="space-y-0">
+        {/* border-top on first row, no border-bottom on last (seamless into CTA) */}
+        <div
+          className="guide-home-list"
+          style={{ borderTop: "1px solid var(--border)" }}
+        >
           {articles.map((a, i) => (
             <a
               key={a.slug}
               href={`/guide/${a.slug}`}
               className="group flex items-start gap-5 py-5 transition"
-              style={{ borderBottom: "1px solid var(--border)" }}
+              style={{
+                borderBottom:
+                  i < articles.length - 1 ? "1px solid var(--border)" : "none",
+              }}
             >
               {/* Index number */}
               <span
@@ -131,7 +169,7 @@ export default async function HomePage() {
                   </span>
                 </div>
                 <p
-                  className="font-semibold text-sm leading-snug transition line-clamp-2"
+                  className="font-semibold text-sm leading-snug line-clamp-2"
                   style={{ color: "var(--text-primary)" }}
                 >
                   {a.title}
@@ -156,12 +194,12 @@ export default async function HomePage() {
         </div>
       </section>
 
-      {/* ── Brand Section ── */}
+      {/* ── Brand CTA Section — no leading divider, flows from list ── */}
       <section
         className="rounded-2xl p-8 text-center"
         style={{
           background:
-            "linear-gradient(135deg, rgba(201,169,97,0.08) 0%, rgba(255,45,135,0.05) 100%)",
+            "linear-gradient(135deg, rgba(201,169,97,0.09) 0%, rgba(255,45,135,0.06) 100%)",
           border: "1px solid var(--border-gold)",
         }}
       >

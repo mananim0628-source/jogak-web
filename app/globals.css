@@ -41,7 +41,7 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-/* ───────── Editorial noise texture (subtle) ───────── */
+/* ───────── Ambient gradient overlay ───────── */
 body::before {
   content: "";
   position: fixed;
@@ -53,16 +53,14 @@ body::before {
   z-index: 0;
 }
 
+/* ───────── Desktop hero mood orb ───────── */
+@media (min-width: 768px) {
+  .md-orb { display: block !important; }
+}
+
 /* ───────── Gold utility ───────── */
 .text-gold { color: var(--gold); }
 .border-gold { border-color: var(--gold-line); }
-
-/* ───────── Breadcrumb ───────── */
-.breadcrumb-link {
-  color: var(--text-secondary);
-  transition: color 0.15s;
-}
-.breadcrumb-link:hover { color: var(--gold); }
 
 /* ───────── Overline label ───────── */
 .overline {
@@ -72,6 +70,13 @@ body::before {
   text-transform: uppercase;
   color: var(--gold);
 }
+
+/* ───────── Breadcrumb ───────── */
+.breadcrumb-link {
+  color: var(--text-secondary);
+  transition: color 0.15s;
+}
+.breadcrumb-link:hover { color: var(--gold); }
 
 /* ───────── Editorial divider ───────── */
 .divider-gold {
@@ -108,75 +113,108 @@ body::before {
   background: var(--gold-dim);
 }
 
+/* ───────── Guide list OG thumbnail — mobile: hidden, desktop: visible ───────── */
+.guide-thumb {
+  display: none;
+}
+@media (min-width: 640px) {
+  .guide-thumb { display: block; }
+}
+
 /* ───────── Prose — Article body ───────── */
 .prose {
   font-size: 0.9375rem;
-  line-height: 1.85;
+  line-height: 1.9;
   color: var(--text-primary);
+  max-width: 68ch;
 }
 .prose h2 {
-  font-size: 1.15rem;
+  font-size: 1.2rem;
   font-weight: 800;
   color: var(--text-primary);
-  margin-top: 2.75rem;
+  margin-top: 3rem;
   margin-bottom: 0.875rem;
-  letter-spacing: -0.01em;
-  padding-bottom: 0.5rem;
+  letter-spacing: -0.02em;
+  padding-bottom: 0.625rem;
   border-bottom: 1px solid var(--border);
 }
 .prose h3 {
   font-size: 1rem;
   font-weight: 700;
   color: var(--text-primary);
-  margin-top: 2rem;
+  margin-top: 2.25rem;
   margin-bottom: 0.625rem;
+  letter-spacing: -0.01em;
 }
 .prose p {
-  color: #C8C0D8;
-  line-height: 1.85;
-  margin-bottom: 1.125rem;
+  color: #CAC2D8;
+  line-height: 1.9;
+  margin-bottom: 1.25rem;
 }
 .prose ul, .prose ol {
-  color: #C8C0D8;
-  margin-bottom: 1.125rem;
-  padding-left: 1.375rem;
+  color: #CAC2D8;
+  margin-bottom: 1.25rem;
+  padding-left: 1.5rem;
 }
-.prose li { margin-bottom: 0.375rem; }
+.prose li {
+  margin-bottom: 0.4rem;
+  line-height: 1.75;
+}
 .prose ul li { list-style: disc; }
 .prose ol li { list-style: decimal; }
 .prose strong { color: var(--text-primary); font-weight: 700; }
 .prose a { color: var(--gold); text-decoration: underline; text-underline-offset: 3px; }
 .prose a:hover { color: var(--gold-light); }
-.prose hr { border: none; border-top: 1px solid var(--border); margin: 2.5rem 0; }
+.prose hr { border: none; border-top: 1px solid var(--border); margin: 2.75rem 0; }
+
+/* Table */
 .prose table {
-  width: 100%; font-size: 0.875rem;
-  border-collapse: collapse; margin-bottom: 1.75rem;
+  width: 100%;
+  font-size: 0.875rem;
+  border-collapse: collapse;
+  margin-bottom: 2rem;
   border: 1px solid var(--border);
-  border-radius: 0.75rem; overflow: hidden;
+  border-radius: 0.75rem;
+  overflow: hidden;
 }
 .prose th {
-  text-align: left; font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase;
-  color: var(--gold); font-weight: 700; padding: 0.75rem 1rem;
-  background: rgba(201,169,97,0.06);
+  text-align: left;
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--gold);
+  font-weight: 700;
+  padding: 0.875rem 1rem;
+  background: rgba(201,169,97,0.07);
   border-bottom: 1px solid var(--border-gold);
 }
 .prose td {
-  padding: 0.625rem 1rem;
+  padding: 0.75rem 1rem;
   border-bottom: 1px solid var(--border);
-  color: #C8C0D8; vertical-align: top;
+  color: #CAC2D8;
+  vertical-align: top;
+  line-height: 1.65;
 }
 .prose tr:last-child td { border-bottom: none; }
+
+/* Code */
 .prose code, .prose pre {
-  background: rgba(255,255,255,0.06); border: 1px solid var(--border);
-  border-radius: 0.375rem; padding: 0.125rem 0.5rem;
-  font-size: 0.875rem; color: var(--gold-light);
+  background: rgba(255,255,255,0.06);
+  border: 1px solid var(--border);
+  border-radius: 0.375rem;
+  padding: 0.125rem 0.5rem;
+  font-size: 0.875rem;
+  color: var(--gold-light);
 }
+
+/* Blockquote */
 .prose blockquote {
   border-left: 2px solid var(--gold-line);
-  padding: 0.75rem 1.25rem;
-  background: var(--gold-dim);
-  border-radius: 0 0.5rem 0.5rem 0;
+  padding: 0.875rem 1.375rem;
+  background: rgba(201,169,97,0.05);
+  border-radius: 0 0.625rem 0.625rem 0;
   color: var(--text-secondary);
   font-style: italic;
-  margin: 1.5rem 0;
+  margin: 1.75rem 0;
+  line-height: 1.75;
 }
