@@ -1,45 +1,175 @@
 @import "tailwindcss";
 
+/* ───────── Design Tokens ───────── */
 :root {
+  /* Background */
+  --bg-base:    #1A1230;
+  --bg-deep:    #110C22;
+  --bg-surface: rgba(255,255,255,0.035);
+  --bg-glass:   rgba(255,255,255,0.055);
+
+  /* Brand */
+  --gold:       #C9A961;
+  --gold-light: #E2C98A;
+  --gold-dim:   rgba(201,169,97,0.18);
+  --gold-line:  rgba(201,169,97,0.3);
+  --pink:       #FF2D87;
+  --pink-dim:   rgba(255,45,135,0.12);
+
+  /* Text */
+  --text-primary:   #F2EDE4;
+  --text-secondary: #8C849F;
+  --text-muted:     #4E4869;
+
+  /* Border */
+  --border:      rgba(255,255,255,0.08);
+  --border-gold: rgba(201,169,97,0.28);
+  --border-hover:rgba(255,255,255,0.18);
+
+  /* Legacy compat */
   --color-gold: #C9A961;
   --color-pink: #FF2D87;
-  --color-bg: #0d0820;
+  --color-bg:   #1A1230;
 }
 
-/* Prose styling for remark-generated article HTML */
-.prose h2 {
-  font-size: 1.2rem;
+/* ───────── Base ───────── */
+html { scroll-behavior: smooth; }
+
+body {
+  background-color: var(--bg-base);
+  color: var(--text-primary);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ───────── Editorial noise texture (subtle) ───────── */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image:
+    radial-gradient(ellipse 80% 60% at 50% -10%, rgba(201,169,97,0.06) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 40% at 90% 80%, rgba(255,45,135,0.04) 0%, transparent 50%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ───────── Gold utility ───────── */
+.text-gold { color: var(--gold); }
+.border-gold { border-color: var(--gold-line); }
+
+/* ───────── Overline label ───────── */
+.overline {
+  font-size: 0.65rem;
   font-weight: 700;
-  color: #fff;
-  margin-top: 2.5rem;
-  margin-bottom: 1rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+/* ───────── Editorial divider ───────── */
+.divider-gold {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--gold-line), transparent);
+}
+
+/* ───────── Glass card ───────── */
+.glass-card {
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  transition: border-color 0.2s, background 0.2s;
+}
+.glass-card:hover {
+  background: var(--bg-glass);
+  border-color: var(--border-gold);
+}
+
+/* ───────── Track badge ───────── */
+.track-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold);
+  border: 1px solid var(--gold-line);
+  padding: 0.3rem 0.75rem;
+  border-radius: 100px;
+  background: var(--gold-dim);
+}
+
+/* ───────── Prose — Article body ───────── */
+.prose {
+  font-size: 0.9375rem;
+  line-height: 1.85;
+  color: var(--text-primary);
+}
+.prose h2 {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  margin-top: 2.75rem;
+  margin-bottom: 0.875rem;
+  letter-spacing: -0.01em;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--border);
 }
 .prose h3 {
-  font-size: 1.05rem;
-  font-weight: 600;
-  color: #fff;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text-primary);
   margin-top: 2rem;
-  margin-bottom: 0.75rem;
+  margin-bottom: 0.625rem;
 }
 .prose p {
-  color: #d1d5db;
-  line-height: 1.8;
-  margin-bottom: 1rem;
+  color: #C8C0D8;
+  line-height: 1.85;
+  margin-bottom: 1.125rem;
 }
 .prose ul, .prose ol {
-  color: #d1d5db;
-  margin-bottom: 1rem;
-  padding-left: 1.25rem;
+  color: #C8C0D8;
+  margin-bottom: 1.125rem;
+  padding-left: 1.375rem;
 }
-.prose li { margin-bottom: 0.25rem; }
+.prose li { margin-bottom: 0.375rem; }
 .prose ul li { list-style: disc; }
 .prose ol li { list-style: decimal; }
-.prose strong { color: #fff; font-weight: 600; }
-.prose a { color: var(--color-gold); text-decoration: underline; text-underline-offset: 2px; }
-.prose a:hover { color: #fff; }
-.prose hr { border-color: rgba(255,255,255,0.1); margin: 2rem 0; }
-.prose table { width: 100%; font-size: 0.875rem; border-collapse: collapse; margin-bottom: 1.5rem; }
-.prose th { text-align: left; font-size: 0.75rem; color: var(--color-gold); font-weight: 600; padding-bottom: 0.5rem; border-bottom: 1px solid rgba(255,255,255,0.2); padding-right: 1rem; }
-.prose td { padding: 0.5rem 1rem 0.5rem 0; border-bottom: 1px solid rgba(255,255,255,0.08); color: #d1d5db; vertical-align: top; }
-.prose code, .prose pre { background: rgba(255,255,255,0.08); border-radius: 0.375rem; padding: 0.125rem 0.5rem; font-size: 0.875rem; color: #e5e7eb; }
-.prose blockquote { border-left: 3px solid rgba(201,169,97,0.5); padding-left: 1rem; color: #9ca3af; font-style: italic; }
+.prose strong { color: var(--text-primary); font-weight: 700; }
+.prose a { color: var(--gold); text-decoration: underline; text-underline-offset: 3px; }
+.prose a:hover { color: var(--gold-light); }
+.prose hr { border: none; border-top: 1px solid var(--border); margin: 2.5rem 0; }
+.prose table {
+  width: 100%; font-size: 0.875rem;
+  border-collapse: collapse; margin-bottom: 1.75rem;
+  border: 1px solid var(--border);
+  border-radius: 0.75rem; overflow: hidden;
+}
+.prose th {
+  text-align: left; font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--gold); font-weight: 700; padding: 0.75rem 1rem;
+  background: rgba(201,169,97,0.06);
+  border-bottom: 1px solid var(--border-gold);
+}
+.prose td {
+  padding: 0.625rem 1rem;
+  border-bottom: 1px solid var(--border);
+  color: #C8C0D8; vertical-align: top;
+}
+.prose tr:last-child td { border-bottom: none; }
+.prose code, .prose pre {
+  background: rgba(255,255,255,0.06); border: 1px solid var(--border);
+  border-radius: 0.375rem; padding: 0.125rem 0.5rem;
+  font-size: 0.875rem; color: var(--gold-light);
+}
+.prose blockquote {
+  border-left: 2px solid var(--gold-line);
+  padding: 0.75rem 1.25rem;
+  background: var(--gold-dim);
+  border-radius: 0 0.5rem 0.5rem 0;
+  color: var(--text-secondary);
+  font-style: italic;
+  margin: 1.5rem 0;
+}

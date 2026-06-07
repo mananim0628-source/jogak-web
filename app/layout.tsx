@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Noto_Sans_KR } from "next/font/google";
+import { Noto_Sans_KR, Playfair_Display } from "next/font/google";
 import Image from "next/image";
 import "./globals.css";
 
@@ -7,6 +7,12 @@ const notoSansKR = Noto_Sans_KR({
   subsets: ["latin"],
   weight: ["400", "500", "700", "900"],
   variable: "--font-noto",
+});
+
+const playfair = Playfair_Display({
+  subsets: ["latin"],
+  weight: ["400", "700"],
+  variable: "--font-playfair",
 });
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://jogak-web.vercel.app";
@@ -35,28 +41,85 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="ko" className={notoSansKR.variable}>
-      <body className="min-h-screen bg-[#0d0820] text-white antialiased">
-        <header className="border-b border-white/10 bg-[#0d0820]/80 backdrop-blur sticky top-0 z-50">
-          <div className="max-w-3xl mx-auto px-4 h-14 flex items-center justify-between">
-            <a href="/" className="flex items-center gap-2">
-              <Image src="/logo.png" alt="조각닷컴" width={32} height={32} className="rounded-full" />
-              <span className="text-gold font-bold tracking-widest text-sm uppercase">조각닷컴</span>
+    <html lang="ko" className={`${notoSansKR.variable} ${playfair.variable}`}>
+      <body
+        className="min-h-screen antialiased"
+        style={{ background: "var(--bg-base)", color: "var(--text-primary)" }}
+      >
+        {/* Header */}
+        <header
+          className="sticky top-0 z-50"
+          style={{
+            borderBottom: "1px solid var(--border)",
+            background: "rgba(26,18,48,0.85)",
+            backdropFilter: "blur(20px)",
+            WebkitBackdropFilter: "blur(20px)",
+          }}
+        >
+          <div className="max-w-3xl mx-auto px-5 h-14 flex items-center justify-between">
+            <a href="/" className="flex items-center gap-2.5">
+              <Image
+                src="/logo.png"
+                alt="조각닷컴"
+                width={28}
+                height={28}
+                className="rounded-full"
+                style={{ border: "1px solid var(--gold-line)" }}
+              />
+              <span
+                className="font-bold text-sm tracking-widest uppercase"
+                style={{ color: "var(--gold)", fontFamily: "var(--font-playfair)" }}
+              >
+                조각닷컴
+              </span>
             </a>
             <a
               href="https://t.me/unni_memo"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-xs border border-gold/40 text-gold px-3 py-1.5 rounded-full hover:bg-gold/10 transition"
+              className="text-xs font-semibold px-4 py-1.5 rounded-full transition"
+              style={{
+                border: "1px solid var(--gold-line)",
+                color: "var(--gold)",
+                background: "var(--gold-dim)",
+              }}
             >
               일행 찾기
             </a>
           </div>
         </header>
-        <main className="max-w-3xl mx-auto px-4 py-10">{children}</main>
-        <footer className="border-t border-white/10 mt-16 py-8 text-center text-xs text-gray-600">
-          <p>© {new Date().getFullYear()} 조각닷컴 · 인스타그램{" "}
-            <a href="https://instagram.com/jogak_note" className="text-gold/60 hover:text-gold" target="_blank" rel="noopener noreferrer">@jogak_note</a>
+
+        {/* Main */}
+        <main
+          className="max-w-3xl mx-auto px-5 py-12"
+          style={{ position: "relative", zIndex: 1 }}
+        >
+          {children}
+        </main>
+
+        {/* Footer */}
+        <footer
+          className="mt-20 py-10 text-center"
+          style={{
+            borderTop: "1px solid var(--border)",
+            position: "relative",
+            zIndex: 1,
+          }}
+        >
+          <p
+            className="text-xs"
+            style={{ color: "var(--text-muted)", letterSpacing: "0.08em" }}
+          >
+            © {new Date().getFullYear()} 조각닷컴 ·{" "}
+            <a
+              href="https://instagram.com/jogak_note"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{ color: "var(--gold)", opacity: 0.7 }}
+              className="hover:opacity-100 transition"
+            >
+              @jogak_note
+            </a>
           </p>
         </footer>
       </body>

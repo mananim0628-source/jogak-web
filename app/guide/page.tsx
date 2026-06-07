@@ -11,24 +11,78 @@ export default async function GuidePage() {
 
   return (
     <>
-      <h1 className="text-3xl font-black text-white mb-2">가이드</h1>
-      <p className="text-gray-400 mb-10">강남 나이트라이프 비용·매너 정보</p>
-      <div className="space-y-4">
-        {articles.map((a) => (
+      {/* Page header */}
+      <div className="pb-10">
+        <p className="overline mb-4">All Guides</p>
+        <h1
+          className="font-black mb-2"
+          style={{
+            fontSize: "clamp(1.75rem, 5vw, 2.5rem)",
+            letterSpacing: "-0.025em",
+            color: "var(--text-primary)",
+          }}
+        >
+          가이드
+        </h1>
+        <p className="text-sm" style={{ color: "var(--text-secondary)" }}>
+          강남 나이트라이프 비용·매너 정보 — {articles.length}편
+        </p>
+      </div>
+
+      <div className="divider-gold mb-8" />
+
+      {/* Article list — editorial row style */}
+      <div className="space-y-0">
+        {articles.map((a, i) => (
           <a
             key={a.slug}
             href={`/guide/${a.slug}`}
-            className="block border border-white/10 rounded-xl p-5 bg-white/3 hover:bg-white/6 hover:border-gold/30 transition group"
+            className="group flex items-start gap-6 py-6 transition"
+            style={{ borderBottom: "1px solid var(--border)" }}
           >
-            <div className="flex items-center gap-2 mb-2">
-              <span className="text-xs text-gold tracking-wider">{trackLabel(a.track)}</span>
-              <span className="text-gray-600 text-xs">·</span>
-              <span className="text-xs text-gray-500">{a.episode}</span>
+            {/* Index */}
+            <span
+              className="shrink-0 font-bold tabular-nums"
+              style={{
+                fontSize: "1.5rem",
+                color: "var(--text-muted)",
+                fontFamily: "var(--font-playfair)",
+                lineHeight: 1,
+                minWidth: "2.5rem",
+              }}
+            >
+              {String(i + 1).padStart(2, "0")}
+            </span>
+
+            {/* Content */}
+            <div className="flex-1 min-w-0">
+              <div className="flex items-center gap-2 mb-2">
+                <span className="track-badge">{trackLabel(a.track)}</span>
+                <span style={{ color: "var(--text-muted)", fontSize: "0.7rem" }}>
+                  {a.episode}
+                </span>
+              </div>
+              <h2
+                className="font-bold text-base leading-snug mb-1.5 transition group-hover:opacity-80"
+                style={{ color: "var(--text-primary)", letterSpacing: "-0.01em" }}
+              >
+                {a.title}
+              </h2>
+              <p
+                className="text-xs leading-relaxed line-clamp-2"
+                style={{ color: "var(--text-secondary)" }}
+              >
+                {a.description}
+              </p>
             </div>
-            <h2 className="text-white font-bold group-hover:text-gold transition text-base leading-snug">
-              {a.title}
-            </h2>
-            <p className="text-gray-500 text-xs mt-1.5 line-clamp-2">{a.description}</p>
+
+            {/* Arrow */}
+            <span
+              className="shrink-0 self-center text-sm transition group-hover:translate-x-0.5"
+              style={{ color: "var(--text-muted)" }}
+            >
+              →
+            </span>
           </a>
         ))}
       </div>
