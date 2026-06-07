@@ -104,7 +104,7 @@ export default async function OgImage({
             조각닷컴
           </div>
           <div style={{ color: "#FF2D87", fontSize: 24, fontFamily: "NotoSansKR" }}>
-            @jogak_note
+            @unni_memo
           </div>
         </div>
       </div>
