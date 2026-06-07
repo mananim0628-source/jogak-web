@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Noto_Sans_KR } from "next/font/google";
+import Image from "next/image";
 import "./globals.css";
 
 const notoSansKR = Noto_Sans_KR({
@@ -38,8 +39,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body className="min-h-screen bg-[#0d0820] text-white antialiased">
         <header className="border-b border-white/10 bg-[#0d0820]/80 backdrop-blur sticky top-0 z-50">
           <div className="max-w-3xl mx-auto px-4 h-14 flex items-center justify-between">
-            <a href="/" className="text-gold font-bold tracking-widest text-sm uppercase">
-              조각닷컴
+            <a href="/" className="flex items-center gap-2">
+              <Image src="/logo.png" alt="조각닷컴" width={32} height={32} className="rounded-full" />
+              <span className="text-gold font-bold tracking-widest text-sm uppercase">조각닷컴</span>
             </a>
             <a
               href="https://t.me/unni_memo"
