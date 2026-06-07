@@ -61,8 +61,7 @@ async function upsertCard(
     process.exit(1);
   }
 
-  // (카드 스크립트는 created_at.desc limit 1을 읽으므로 최신 행이 곧 현재 EP)
-  const res = await fetch(`${SUPABASE_URL}/rest/v1/jogak_cardnews`, {
+  const res = await fetch(`${SUPABASE_URL}/rest/v1/jogak_cardnews?on_conflict=slug`, {
     method: "POST",
     headers: {
       apikey: SRK,
@@ -70,7 +69,7 @@ async function upsertCard(
       "Content-Type": "application/json",
       Prefer: "resolution=merge-duplicates,return=representation",
     },
-    body: JSON.stringify({ cardnews_json }),
+    body: JSON.stringify({ slug, cardnews_json }),
   });
 
   if (!res.ok) {
