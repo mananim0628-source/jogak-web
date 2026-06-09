@@ -4,7 +4,7 @@ import type { Metadata } from "next";
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://jogak-web.vercel.app";
 
 export const metadata: Metadata = {
-  title: "강남 밤문화 가이드 | 조각닷컴",
+  title: "강남 밤문화 가이드",
   description:
     "강남 클럽·라운지·파티 비용분담과 동행, 처음 가는 사람을 위한 실전 가이드 모음. 보틀 가격·드레스코드·입장 절차를 실비용 기준으로 정리합니다.",
   openGraph: {
