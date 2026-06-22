@@ -95,7 +95,7 @@ export default async function HomePage() {
             가이드 보기
           </a>
           <a
-            href="https://t.me/unni_memo"
+            href="https://t.me/jogakdotcom"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 text-sm font-semibold px-6 py-3 rounded-full transition"
@@ -216,7 +216,7 @@ export default async function HomePage() {
           강남 클럽·라운지·루프탑 바 조각 모임을 텔레그램에서 모집합니다.
         </p>
         <a
-          href="https://t.me/unni_memo"
+          href="https://t.me/jogakdotcom"
           target="_blank"
           rel="noopener noreferrer"
           className="inline-block text-sm font-bold px-7 py-3 rounded-full transition hover:opacity-90"
@@ -225,7 +225,7 @@ export default async function HomePage() {
             color: "#fff",
           }}
         >
-          @unni_memo 참여하기
+          @jogakdotcom 참여하기
         </a>
       </section>
     </>

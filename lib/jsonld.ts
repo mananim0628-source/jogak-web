@@ -14,7 +14,7 @@ export function serviceJsonLd() {
       "@type": "Organization",
       name: "조각닷컴",
       url: SITE_URL,
-      sameAs: ["https://www.instagram.com/jogak_note", "https://t.me/unni_memo"],
+      sameAs: ["https://www.instagram.com/jogak_note", "https://t.me/jogakdotcom"],
     },
     areaServed: { "@type": "City", name: "서울" },
     serviceType: "모임 매칭",

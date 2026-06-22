@@ -40,7 +40,7 @@ tags: [조각닷컴, 플랫폼, 웹, PWA, SEO, AEO, GEO, 아키텍처]
   3. 비용 **표**(보틀/테이블/1인 분담)
   4. **FAQ 섹션 + JSON-LD(FAQPage) 스키마**
   5. 내부링크(다른 가이드) + E-E-A-T(작성자·출처·실제 경험 명시)
-  6. CTA: @unni_memo / 가입 대기
+  6. CTA: @jogakdotcom / 가입 대기
 - **기술 SEO**: 서버 렌더 메타·OG, sitemap.xml, robots.txt, 구조화 데이터(Article/FAQPage/BreadcrumbList).
 - **등록**: 구글 서치콘솔 + **네이버 서치어드바이저**(한국 타깃 필수).
 - **파이프라인 변경**: EP 제작 워크플로에 **"웹 아티클 산출" 단계 추가** → 인스타(릴스·카드) + 웹(아티클) 1편 동시 3채널.
@@ -64,7 +64,7 @@ tags: [조각닷컴, 플랫폼, 웹, PWA, SEO, AEO, GEO, 아키텍처]
 ## 4. 측정 (순위 보장 아님)
 - SEO: 서치콘솔/서치어드바이저 색인·노출·클릭.
 - AEO/GEO: 주요 질의어를 ChatGPT/Perplexity/Gemini·구글 AI Overview에 직접 물어 **인용 여부 수동 추적**(주기적).
-- 전환: 아티클 → @unni_memo/가입 유입.
+- 전환: 아티클 → @jogakdotcom/가입 유입.
 
 ## 5. ⚠️ 착수 전 결정할 것 (빌드 전 합의)
 1. 도메인 — 정식 도메인 확보할지(브랜드+SEO 유리) vs Vercel 기본.
