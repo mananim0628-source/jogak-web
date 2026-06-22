@@ -45,7 +45,7 @@ cards:
     role: "조각"
     headline: "비용 나누면\n강남 클럽도 현실"
     sub: "같이 갈 일행을 찾는다면"
-    action: "@unni_memo 모집 확인"
+    action: "@jogakdotcom 모집 확인"
 reel:
   video_url: ""
   scenes:
@@ -65,11 +65,11 @@ reel:
       narration: "1인 얼마인지 계산하고, 드레스코드도 미리 확인하세요"
       caption: "실수 ②③ 방문 전 15분"
     - no: 6
-      narration: "같이 갈 일행을 찾고 있다면 @unni_memo"
-      caption: "텔레그램 @unni_memo"
+      narration: "같이 갈 일행을 찾고 있다면 @jogakdotcom"
+      caption: "텔레그램 @jogakdotcom"
     - no: 7
       narration: "조각이 모여야 파티가 열린다"
-      caption: "@unni_memo 일행 모집 중"
+      caption: "@jogakdotcom 일행 모집 중"
 faq:
   - q: "강남 클럽 테이블을 잡으면 실제로 얼마가 나오나요?"
     a: "핫플레이스 기준 보틀 1병에 30~60만 원, 테이블 최소 금액이 100만 원을 넘는 곳도 있습니다. 4명이 100만 원짜리 테이블을 이용하면 1인 부담금은 25만 원입니다. 인원을 먼저 확정하고 예산을 나눠 계산하는 것이 핵심입니다."
@@ -151,4 +151,4 @@ faq:
 
 이것이 "조각"의 핵심입니다. 혼자 가면 부담스러운 고가 경험을, 같이 갈 일행과 비용을 나눠서 즐기는 방식입니다.
 
-강남 클럽 테이블을 함께 이용할 일행을 찾고 있다면, 텔레그램 [@unni_memo](https://t.me/unni_memo)에서 현재 모집 중인 조각 모임을 확인하세요.
+강남 클럽 테이블을 함께 이용할 일행을 찾고 있다면, 텔레그램 [@jogakdotcom](https://t.me/jogakdotcom)에서 현재 모집 중인 조각 모임을 확인하세요.

@@ -80,7 +80,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               </span>
             </a>
             <a
-              href="https://t.me/unni_memo"
+              href="https://t.me/jogakdotcom"
               target="_blank"
               rel="noopener noreferrer"
               className="text-xs font-semibold px-4 py-1.5 rounded-full transition"

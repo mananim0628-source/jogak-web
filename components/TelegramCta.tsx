@@ -13,12 +13,12 @@ export default function TelegramCta() {
         텔레그램에서 현재 모집 중인 조각 모임을 확인하세요.
       </p>
       <a
-        href="https://t.me/unni_memo"
+        href="https://t.me/jogakdotcom"
         target="_blank"
         rel="noopener noreferrer"
         className="inline-block bg-gradient-to-r from-pink to-gold text-white font-bold px-8 py-3 rounded-full text-sm tracking-wide hover:opacity-90 transition"
       >
-        @unni_memo 참여하기
+        @jogakdotcom 참여하기
       </a>
       <p className="mt-4 text-xs text-gray-500">
         인스타그램:{" "}

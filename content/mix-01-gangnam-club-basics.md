@@ -15,7 +15,7 @@ cards:
     role: "훅"
     headline: "강남 클럽\n처음 가면\n얼마가 드나요?"
     sub: "비용 구조 모르면 카드 명세서에서 당황합니다"
-    action: "@unni_memo에서 일행 찾기"
+    action: "@jogakdotcom에서 일행 찾기"
   - no: 2
     role: "비용 구조"
     headline: "보틀+테이블 차지\n= 최소 수십만 원"
@@ -45,7 +45,7 @@ cards:
     role: "조각"
     headline: "비용 나누면\n충분히 갈 수 있다"
     sub: "4인 120만 원 테이블 → 1인 30만 원"
-    action: "@unni_memo 일행 모집 확인"
+    action: "@jogakdotcom 일행 모집 확인"
 reel:
   video_url: ""
   scenes:
@@ -65,11 +65,11 @@ reel:
       narration: "보틀 주문 전 일행 전체 합의가 먼저입니다"
       caption: "N분의 1이 기본"
     - no: 6
-      narration: "같이 갈 일행을 찾고 있다면 @unni_memo"
-      caption: "텔레그램 @unni_memo"
+      narration: "같이 갈 일행을 찾고 있다면 @jogakdotcom"
+      caption: "텔레그램 @jogakdotcom"
     - no: 7
       narration: "조각이 모여야 파티가 열린다"
-      caption: "@unni_memo 일행 모집 중"
+      caption: "@jogakdotcom 일행 모집 중"
 faq:
   - q: "강남 클럽 테이블 비용이 얼마인가요?"
     a: "테이블 비용은 보틀(술) 정가를 기준으로 합니다. 핫플레이스 기준 보틀 1병에 30~60만 원대이며, 인기 클럽은 테이블 최소 금액이 100만 원을 넘기도 합니다. 혼자 부담하지 않고 일행끼리 N분의 1로 나누는 것이 일반적입니다."
@@ -154,4 +154,4 @@ faq:
 
 4명이 120만 원 테이블을 이용하면 1인 부담금은 30만 원입니다. 혼자 가면 부담스럽지만, 같이 갈 일행과 나누면 프리미엄 경험의 문턱이 낮아집니다. 이것이 "조각" — 비용을 나눠 고가 경험을 함께 즐기는 방식의 핵심입니다.
 
-같이 갈 일행을 찾고 있다면 텔레그램 [@unni_memo](https://t.me/unni_memo)에서 모집 현황을 확인하세요.
+같이 갈 일행을 찾고 있다면 텔레그램 [@jogakdotcom](https://t.me/jogakdotcom)에서 모집 현황을 확인하세요.

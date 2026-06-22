@@ -45,7 +45,7 @@ cards:
   - no: 7
     role: cta
     headline: "모임 꾸리기 부담되면"
-    sub: "일행 매칭부터 정산까지 · @unni_memo"
+    sub: "일행 매칭부터 정산까지 · @jogakdotcom"
 
 # ── 릴스 22초 (카드뉴스와 슬라이드: 브랜드 배경, 배경색 위 색) ──
 reel:

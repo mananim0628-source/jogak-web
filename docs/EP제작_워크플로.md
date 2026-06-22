@@ -49,13 +49,13 @@ cd ~/jogak-telegram && python3 workflows/gangnam_carousel_pacers.py {slug}
 - [ ] 클린 포지션: 만남/이성/연애 프레임 없음, 경험·비용·동행 프레임
 - [ ] 카드 7장 = 해당 slug 내용 맞는지 (card1 커버 확인)
 - [ ] 릴스: 자막 12자, 세이프존(하단 CTA 안 가림), 무음 구간 없음, S5 숫자 카드와 일치
-- [ ] 웹: 소스보기에 본문 HTML 보임(SSG) + FAQ JSON-LD + CTA(@unni_memo) 동작
+- [ ] 웹: 소스보기에 본문 HTML 보임(SSG) + FAQ JSON-LD + CTA(@jogakdotcom) 동작
 - [ ] 발행 순서: 릴스(D-Day, 파일럿) → 카드(D+1) 권장
 
 ## 4. 측정 (조회수 아님)
 - 인스타: 저장·공유·완주율(릴스)·저장(카드). 48시간 관찰.
 - 웹/검색: 서치콘솔·서치어드바이저·Bing 색인/노출. AI 인용은 주요 질의어 수동 추적.
-- 전환: 아티클·게시물 → @unni_memo 유입.
+- 전환: 아티클·게시물 → @jogakdotcom 유입.
 
 ## 5. 현재 자산 상태
 | 자산 | 상태 |
